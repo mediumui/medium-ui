@@ -1,5 +1,5 @@
-import MeTest from "./test"
+import VerifyNumber from "./verify-number"
 
 export default {
-  MeTest,
+  VerifyNumber,
 }
