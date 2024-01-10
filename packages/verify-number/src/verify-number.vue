@@ -41,23 +41,13 @@ export default {
       inputCode: "", //输入的验证码
       verifyValue: null, //生成的校验器
       status: "none",
+      canvasId: "canvas_" + new Date().getTime(),
     }
   },
   props: {
     verifyType: {
       type: String,
       default: "number", //number 数字，blend字母数字混合
-    },
-    //画布id，这里随机生成一个id，为了实现多个人机交互
-    canvasId: {
-      type: String,
-      default: () => {
-        return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
-          var r = (Math.random() * 16) | 0,
-            v = c == "x" ? r : (r & 0x3) | 0x8
-          return v.toString(16)
-        })
-      },
     },
   },
   watch: {
@@ -77,12 +67,14 @@ export default {
     })
   },
   methods: {
+    //刷新验证码
     refresh(reset = true) {
       if (reset) {
         this.status = "none"
       }
       this.verifyValue.refresh()
     },
+    //校验验证码
     startVerify() {
       //输入长度不够，不进行校验
       if (this.inputCode.length < 4) return

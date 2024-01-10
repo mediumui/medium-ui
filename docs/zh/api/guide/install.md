@@ -1,4 +1,6 @@
-### npm安装
+**npm安装**
+***  
+
 1、安装依赖
 ```sh  
 npm install medium-ui

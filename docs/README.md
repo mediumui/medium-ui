@@ -4,6 +4,6 @@ home: true
 heroText: medium组件
 tagline: 基于Vue 2.6前端组件库
 actionText: 快速上手 →
-actionLink: /api/guide/introduction/
+actionLink: /zh/api/guide/introduction/
 footer: MIT Licensed | Copyright © 2023-present wilson
 ---

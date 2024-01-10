@@ -5,7 +5,6 @@
   >
     <me-verify-number
       v-model="status"
-      canvasId="aaaaa"
       @verify="result"
     >
       <template slot="result">

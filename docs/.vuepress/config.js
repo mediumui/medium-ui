@@ -2,6 +2,7 @@ module.exports = {
   base: "/medium-ui/",
   title: "medium-ui组件库",
   description: "medium-ui使用文档",
+  head: [["link", { rel: "icon", href: "/icon.png" }]],
   // 默认是 false, 设置为 true 来启用
   editLinks: true,
   editLinkText: "帮助我们改善此页面！",
@@ -10,9 +11,9 @@ module.exports = {
   themeConfig: {
     searchMaxSuggestions: 10,
     nav: [
-      { text: "Home", link: "/" },
-      { text: "API", link: "/api/guide/install" },
-      { text: "github", link: "https://github.com/mediumui/medium-ui" },
+      { text: "首页", link: "/" },
+      { text: "文档", link: "/zh/api/guide/introduction" },
+      { text: "源码", link: "https://github.com/mediumui/medium-ui" },
     ],
     sidebar: [
       {
