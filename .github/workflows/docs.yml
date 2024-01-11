@@ -24,7 +24,7 @@ jobs:
         with:
           node-version: 14.16.0
       - name: pull ui node_modules
-        run: npm run i
+        run: npm  i
       - name: build ui
         run: npm run dist
       - name: cd docs
