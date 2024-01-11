@@ -25,6 +25,7 @@
 </template>
 
 <script>
+import _ from "lodash"
 export default {
   name: "me-menu-button",
   components: {
@@ -66,6 +67,10 @@ export default {
       const menuList = []
       for (let i = 0; i < slots.length; i++) {
         const slot = slots[i]
+        //如果该组件隐藏了，则跳过
+        if (_.get(slot.data, "directives[0].rawName") == "v-show" && _.get(slot.data, "directives[0].value") == false) {
+          continue
+        }
         //过滤掉无意义的slot
         if (!slot.tag) continue
         //优先选出下拉菜单外的组件
@@ -87,5 +92,11 @@ export default {
 .me-menu-button {
   display: flex;
   flex-direction: row;
+}
+.me-menu-button .el-button + .el-button {
+  margin-left: 10px;
+}
+.me-menu-button .el-button + .el-dropdown {
+  margin-left: 10px;
 }
 </style>

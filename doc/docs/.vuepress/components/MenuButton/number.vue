@@ -1,5 +1,5 @@
 <template>
-  <me-menu-button>
+  <me-menu-button :number="2">
     <me-menu-button-item
       label="编辑"
       @click="onEdit"

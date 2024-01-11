@@ -3,6 +3,7 @@
     <me-menu-button-item
       label="编辑"
       @click="onEdit"
+      :disabled="true"
     >
     </me-menu-button-item>
     <me-menu-button-item

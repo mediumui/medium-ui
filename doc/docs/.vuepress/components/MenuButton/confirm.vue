@@ -3,11 +3,13 @@
     <me-menu-button-item
       label="编辑"
       @click="onEdit"
+      message="确定进入编辑页面？"
     >
     </me-menu-button-item>
     <me-menu-button-item
       label="删除"
       @click="onDelete"
+      message="确定删除该数据吗?"
     >
     </me-menu-button-item>
     <me-menu-button-item
@@ -18,11 +20,13 @@
     <me-menu-button-item
       label="禁用"
       @click="onDisabled"
+      message="确定禁用该数据？"
     >
     </me-menu-button-item>
     <me-menu-button-item
       label="启用"
       @click="onOpen"
+      message="确定启用该数据？"
     >
     </me-menu-button-item>
   </me-menu-button>

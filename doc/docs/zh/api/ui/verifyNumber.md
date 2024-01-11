@@ -1,11 +1,9 @@
 ### 人机交互(me-verify-number) 
 
 ***
-::: warning 
-人机交互组件提供的是4位数字或字母校验，当用户输入长度大于4会通过<code>@verify</code>返回校验结果。  
-如校验失败，会在返回校验结果的同时刷新校验码。  
-如校验成功，会保持当前的校验码。
-:::
+>人机交互组件提供的是4位数字或字母校验，当用户输入长度大于4会通过<code>@verify</code>返回校验结果。  
+>如校验失败，会在返回校验结果的同时刷新校验码。  
+>如校验成功，会保持当前的校验码。
 
 **纯数字校验** 
 ***
@@ -38,10 +36,8 @@ export default {
 ***  
 
 <Verify-Blend/>  
-::: tip
-人机交互默认为4位随机数字，同时支持4位字母数字混合，<code>verify-type</code>属性支持<code>number</code>和<code>blend</code>, <code>blend</code>为字母数字混合,<code>number</code>为纯数字
-:::   
- 
+
+>人机交互默认为4位随机数字，同时支持4位字母数字混合，<code>verify-type</code>属性支持<code>number</code>和<code>blend</code>, <code>blend</code>为字母数字混合,<code>number</code>为纯数字
 ::: details 点击查看代码  
 ``` html
 <template>
@@ -71,10 +67,7 @@ export default {
 **自定义校验结果**
 ***
 <Verify-Result/>  
-::: tip  
-右侧提示开放<code>slot</code>实现自定义校验结果
-:::  
-
+>右侧提示开放<code>slot</code>实现自定义校验结果
 ::: details 点击查看代码  
 ``` html
 <template>
