@@ -27,21 +27,21 @@ jobs:
         run: npm  i
       - name: build ui
         run: npm run dist
-      - name: cd docs
-        run: |
-          echo "切换至doc目录下，准备文档网页编译"
-        working-directory: ./doc
       - name: pull node_modules
-        run: npm i
+        run: |
+          npm i
+        working-directory: ./doc
       - name: Build VuePress site
-        run: npm run docs:build
+        run: |
+          npm run docs:build
+        working-directory: ./doc
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v4
         with:
           # 部署到 gh-pages 分支
           target_branch: gh-pages
           # 部署目录为 VuePress 的默认输出目录
-          build_dir: docs/.vuepress/dist
+          build_dir: doc/docs/.vuepress/dist
         env:
           # @see https://docs.github.com/cn/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
           GITHUB_TOKEN: ${{ secrets.MARKDOWN_TOKEN }}
