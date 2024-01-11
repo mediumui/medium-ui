@@ -34,7 +34,7 @@ jobs:
       - name: Build
         shell: pwsh
         run: |
-          .\doc.sh
+          ./doc.sh
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v4
         with:
