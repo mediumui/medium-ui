@@ -28,6 +28,10 @@ module.exports = {
             title: "安装",
             path: "/zh/api/guide/install",
           },
+          {
+            title: "功能延展",
+            path: "/zh/api/guide/plugin",
+          },
         ],
       },
       {
