@@ -1,13 +1,11 @@
 <template>
   <div class="verify-box">
-    <me-verify-number verify-type="blend"></me-verify-number>
+    <me-verify-number></me-verify-number>
   </div>
 </template>
 
 <script>
-import MeVerifyNumber from "../../../../packages/verify-number/src/verify-number.vue"
 export default {
-  components: { MeVerifyNumber },
   data() {
     return {
       status: false,

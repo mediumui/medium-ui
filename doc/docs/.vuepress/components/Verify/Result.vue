@@ -15,9 +15,7 @@
 </template>
 
 <script>
-import MeVerifyNumber from "../../../../packages/verify-number/src/verify-number.vue"
 export default {
-  components: { MeVerifyNumber },
   data() {
     return {
       status: "none",

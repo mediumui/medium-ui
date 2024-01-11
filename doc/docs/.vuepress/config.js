@@ -35,8 +35,12 @@ module.exports = {
         collapsable: false,
         children: [
           {
-            title: "人机交互",
+            title: "人机交互 verify-number",
             path: "/zh/api/ui/verifyNumber",
+          },
+          {
+            title: "菜单按钮 menu-button",
+            path: "/zh/api/ui/menuButton",
           },
         ],
       },
@@ -44,5 +48,8 @@ module.exports = {
   },
   markdown: {
     lineNumbers: true,
+  },
+  chainWebpack(config) {
+    config.resolve.alias.set("core-js/library/fn", "core-js/features")
   },
 }

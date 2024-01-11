@@ -3,7 +3,10 @@ import components from "./components"
 const install = function (Vue) {
   Object.keys(components).forEach((key) => {
     const component = components[key]
-    Vue.component(component.name, component)
+    // Vue.component(component.name, component)
+    if (component.install) {
+      component.install(Vue)
+    }
   })
 }
 
