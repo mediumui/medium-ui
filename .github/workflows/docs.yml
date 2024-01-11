@@ -28,7 +28,9 @@ jobs:
       - name: build ui
         run: npm run dist
       - name: cd docs
-        run: cd doc
+        run: |
+          echo "切换至doc目录下，准备文档网页编译"
+        working-directory: ./doc
       - name: pull node_modules
         run: npm i
       - name: Build VuePress site
