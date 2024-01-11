@@ -23,18 +23,16 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 14.16.0
-      # - name: pull base node_modules
-      #   run: npm run dist
-      # - name: cd docs
-      #   run: cd doc
-      # - name: pull node_modules
-      #   run: npm i
-      # - name: Build VuePress site
-      #   run: npm run docs:build
-      - name: Build
-        shell: pwsh
-        run: |
-          ./doc.sh
+      - name: pull ui node_modules
+        run: npm run i
+      - name: build ui
+        run: npm run dist
+      - name: cd docs
+        run: cd doc
+      - name: pull node_modules
+        run: npm i
+      - name: Build VuePress site
+        run: npm run docs:build
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v4
         with:
