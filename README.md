@@ -1,24 +1,14 @@
-# medium-ui
+**npm安装**
+***  
 
-## Project setup
+1、安装依赖
+```sh  
+npm install medium-ui
+```  
+2、引入文件
+```js
+import Vue from "vue"
+import Medium from "medium-ui"
+import "medium-ui/dist/medium-ui.css" // 引用样式
+Vue.use(Medium)
 ```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
