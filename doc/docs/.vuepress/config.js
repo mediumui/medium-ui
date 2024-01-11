@@ -47,6 +47,10 @@ module.exports = {
             title: "菜单按钮 menu-button",
             path: "/zh/api/ui/menuButton",
           },
+          {
+            title: "图片预览 image-viewers",
+            path: "/zh/api/ui/imageViewers",
+          },
         ],
       },
     ],

@@ -1,14 +1,14 @@
 <template>
   <me-image-viewers
     :images="list"
-    type="list"
+    type="wall"
+    size="50px"
   >
   </me-image-viewers>
 </template>
 
 <script>
 export default {
-  name: "App",
   data() {
     return {
       list: [
@@ -25,13 +25,4 @@ export default {
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style></style>
