@@ -6,7 +6,7 @@
 *** 
 <ImageViewers-Text/>  
 ::: details 点击查看代码
-``` html{4}
+``` html
 <template>
   <me-image-viewers
     :images="list"
@@ -75,7 +75,7 @@ export default {
 ***  
 <ImageViewers-WallSize/>  
 ::: tip
-照片墙缩略图默认宽高为<code>100px</code>, 可以通过<code>size="50px"</code>  
+照片墙缩略图默认宽高为<code>100px</code>, 可以通过<code>size="50px"</code>修改  
 注意：<code>size</code>需要带单位，如<code>px</code>
 :::  
 

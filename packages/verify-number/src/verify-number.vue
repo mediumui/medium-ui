@@ -35,7 +35,7 @@
 <script>
 import GVerify from "./verify"
 export default {
-  name: "me-verify-number",
+  name: "verify-number",
   data() {
     return {
       inputCode: "", //输入的验证码

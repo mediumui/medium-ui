@@ -1,7 +1,7 @@
 import ElImageViewers from "element-ui/packages/image/src/image-viewer.vue"
 import "./image-viewers.css"
 export default {
-  name: "me-image-viewers",
+  name: "image-viewers",
   components: { ElImageViewers },
   data() {
     return {

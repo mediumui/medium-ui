@@ -1,5 +1,5 @@
 export default {
-  name: "me-menu-button-item",
+  name: "menu-button-item",
   props: {
     //文本
     label: String,

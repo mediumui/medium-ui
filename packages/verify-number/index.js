@@ -1,5 +1,5 @@
 import VerifyNumber from "./src/verify-number"
-VerifyNumber.install = function (Vue) {
-    Vue.component(VerifyNumber.name, VerifyNumber);
-};
-export default VerifyNumber;
+VerifyNumber.install = function (Vue, prefix) {
+  Vue.component(prefix + VerifyNumber.name, VerifyNumber)
+}
+export default VerifyNumber

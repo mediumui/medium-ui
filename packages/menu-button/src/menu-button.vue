@@ -27,7 +27,7 @@
 <script>
 import _ from "lodash"
 export default {
-  name: "me-menu-button",
+  name: "menu-button",
   components: {
     MeMenuButtonDiv: {
       functional: true,

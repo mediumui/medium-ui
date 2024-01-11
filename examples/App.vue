@@ -1,9 +1,9 @@
 <template>
-  <me-image-viewers
+  <zy-image-viewers
     :images="list"
-    type="list"
+    type="wall"
   >
-  </me-image-viewers>
+  </zy-image-viewers>
 </template>
 
 <script>
