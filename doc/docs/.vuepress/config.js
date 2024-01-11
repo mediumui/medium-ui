@@ -14,6 +14,7 @@ module.exports = {
       { text: "首页", link: "/" },
       { text: "文档", link: "/zh/api/guide/introduction" },
       { text: "源码", link: "https://github.com/mediumui/medium-ui" },
+      { text: "npm库", link: "https://www.npmjs.com/package/medium-ui" },
     ],
     sidebar: [
       {

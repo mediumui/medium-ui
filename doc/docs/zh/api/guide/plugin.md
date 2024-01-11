@@ -3,7 +3,6 @@
 >为了提升开发效率，对部分原生功能进行了延展，其中包括字符串转<code>md5</code>、字符串转<code>json</code>、类型判断等。  
 
 ## **字符串转Md5** 
-***  
 
 <String-Md5/>  
 :::tip
@@ -38,10 +37,9 @@ export default {
 ```
 :::  
 ## **类型判断** 
-***  
 <String-Type/>  
 ::: warning  
-其中手机格式判断公式为以1开头的11位纯数字字符串，不对号码字段进行判断。
+其中手机格式判断公式为以1开头的11位纯数字字符串，不对号段进行判断。
 :::  
 ::: details 查看代码
 ``` html
@@ -89,8 +87,9 @@ export default {
 ```
 :::  
 
-## **消息提示** 
-***  
+## **消息提示**  
+  
+  
 <String-Message/>
 ::: tip
 用来显示「成功<code>success</code>、警告<code>warning</code>、消息<code>info</code>、错误<code>error</code>」类的操作反馈。默认为成功
