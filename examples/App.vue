@@ -1,26 +1,70 @@
 <template>
-  <zy-image-viewers
-    :images="list"
-    type="wall"
-  >
-  </zy-image-viewers>
+  <div>
+    <me-form
+      :model="model"
+      :span="12"
+    >
+      <span slot="head">aaaa</span>
+      <me-form-item
+        label="设施编号"
+        prop="code"
+      ></me-form-item>
+      <me-form-item
+        label="设施状态"
+        prop="statusStr"
+      >
+        <template slot-scope="scope">
+          <span>{{ scope.props }}</span>
+        </template>
+      </me-form-item>
+      <me-form-item
+        label="创建时间"
+        prop="createTime"
+      >
+        <template v-slot:head> 我是自定义的<i class="el-icon-warning" /> </template>
+      </me-form-item>
+      <me-form-item
+        label="设施名称"
+        :col-span="16"
+        prop="deviceName"
+      ></me-form-item>
+      <me-form-item
+        label="设施分类"
+        :col-span="24"
+        prop="class"
+      >
+      </me-form-item>
+    </me-form>
+  </div>
 </template>
 
 <script>
+import MeForm from "../packages/form/src/form.vue"
+import MeFormItem from "../packages/form/src/form-item.js"
 export default {
   name: "App",
+  components: { MeForm, MeFormItem },
   data() {
     return {
-      list: [
-        {
-          fileUrl: "https://img10.360buyimg.com/babel/s590x470_jfs/t20270108/232123/40/11742/47161/659cbb02F9d4b81bf/cff42849e5725d8b.jpg",
-        },
-        {
-          fileUrl:
-            "https://imgcps.jd.com/img-cubic/creative_server_cia_jdcloud/v2/2000366/100043111116/FocusFullshop/CkJqZnMvdDEvMjM2NDYzLzI2LzgwMjgvNDczNjUvNjU5YzRlZjZGMDgyYTYxZDcvMTRlYjExOTk4YTc2YTk1Yi5wbmcSCTQtdHlfMF81NTACOO6LekIWChLpu5Hnmb3osIPnlLXohJHmpIUQAUIUChDmr4_mu6ExMDAw5YePNTQwEAJCEAoM56uL5Y2z5oqi6LStEAZCCgoG5Yqb6I2QEAdYzPWi2PQC/cr/s/q.jpg",
-        },
-      ],
+      model: {},
     }
+  },
+  created() {
+    this.getDetail()
+  },
+  methods: {
+    getDetail() {
+      new Promise((resolve, reject) => {
+        setTimeout(() => {
+          this.model = {
+            code: "ZYA20240112ZYA20240112ZYA20240112ZYA20240112ZYA20240112ZYA20240112ZYA20240112ZYA20240112ZYA20240112ZYA20240112",
+            deviceName: "空调",
+            class: "122222",
+          }
+          resolve()
+        }, 1000)
+      })
+    },
   },
 }
 </script>

@@ -68,7 +68,9 @@ export default {
 > 通过修改<code>number</code>值实现展示常用按钮数量。  
 
 <MenuButton-number/>  
-
+::: warning  
+如果菜单按钮数量为设定的按钮数量+1，那么更多按钮会被+1的按钮替换，不展示下拉列表。
+:::
 ::: details 点击查看代码 
 ``` html {2}
 <template>
@@ -186,7 +188,7 @@ export default {
 ***
 参数|说明|类型|可选值|默认值
 :---|:---|:---|:---|:---
-number|常用按钮展示个数|Number|-|3  
+number|常用按钮展示个数，<font color="#b29400">注意如果<code>:number="3"</code>，<code>me-menu-button-item</code>数量为4，那么不会展示更多按钮，更多按钮位置直接展示第4个按钮</font>|Number|-|3  
 **Slot**
 ***
 name|说明

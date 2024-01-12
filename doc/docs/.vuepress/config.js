@@ -51,6 +51,10 @@ module.exports = {
             title: "图片预览 image-viewers",
             path: "/zh/api/ui/imageViewers",
           },
+          {
+            title: "表单 form",
+            path: "/zh/api/ui/form",
+          },
         ],
       },
     ],

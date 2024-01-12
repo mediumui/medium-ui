@@ -10,7 +10,6 @@ const install = function (Vue, options) {
     }
   })
 }
-console.log(components)
 export default {
   install,
   ...components,

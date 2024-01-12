@@ -81,8 +81,13 @@ export default {
           menuList.push(slot)
         }
       }
+      //如果下拉列表只有一个的时候，更多按钮位置展示该按钮
+      if (menuList.length == 1) {
+        buttons.push(menuList[0])
+      } else {
+        this.menuList = menuList
+      }
       this.buttons = buttons
-      this.menuList = menuList
     },
   },
 }
