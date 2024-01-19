@@ -6,6 +6,19 @@ module.exports = {
   outputDir: "dist",
   //放置生成的静态资源 (js、css、img、fonts) 的 (相对于 outputDir 的) 目录。
   assetsDir: "static",
+  devServer: {
+    host: "0.0.0.0",
+    port: "8080",
+    proxy: {
+      "^/zy-park": {
+        target: "http://192.168.1.103:10701", // 测试
+        changeOrigin: true,
+        pathRewrite: {
+          ["^" + process.env.VUE_APP_BASE_API]: "/zy-park",
+        },
+      },
+    },
+  },
   pages: {
     index: {
       entry: "examples/main.js", // 因为我们改了src目录，所以对应的入口文件配置也要做修改

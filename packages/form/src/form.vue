@@ -56,6 +56,10 @@ export default {
               class: "me-form-item me-form-item-label",
               style: {
                 width: labelWidth,
+                position: "absolute",
+                left: 0,
+                top: "1px",
+                bottom: "1px",
               },
             },
             labelText
@@ -71,6 +75,9 @@ export default {
             "div",
             {
               class: "me-form-item",
+              style: {
+                marginLeft: labelWidth,
+              },
             },
             text
           )
@@ -195,10 +202,14 @@ export default {
   border-spacing: 1px;
 }
 .me-form td {
-  height: 1px;
   width: 100%;
-  background: #fff;
+  position: relative;
+  height: 100%;
 }
+.me-form table tr:nth-child(2n) {
+  background-color: transparent;
+}
+
 .me-form-item-box {
   display: flex;
   flex-direction: row;

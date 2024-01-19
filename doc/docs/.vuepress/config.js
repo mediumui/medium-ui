@@ -55,6 +55,10 @@ module.exports = {
             title: "表单 form",
             path: "/zh/api/ui/form",
           },
+          {
+            title: "表格 Table",
+            path: "/zh/api/ui/table",
+          },
         ],
       },
     ],
