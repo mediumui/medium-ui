@@ -1,5 +1,5 @@
 <template>
-  <div id="player-default"></div>
+  <div id="player-props"></div>
 </template>
 
 <script>
@@ -13,8 +13,9 @@ export default {
   },
   created() {
     this.controller = new PlayerController({
-      id: "player-default",
+      id: "player-props",
       src: this.url,
+      autoplay: true,
     })
   },
   methods: {},

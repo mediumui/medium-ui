@@ -97,8 +97,8 @@ class PlayerController {
         localStorage.setItem(this.config.src, this.progress)
       }
     }
-    if (this.config.onProgress) {
-      this.config.onProgress(this.progress, this)
+    if (this.config.onprogress) {
+      this.config.onprogress(this.progress, this)
     }
   }
   /**
@@ -122,8 +122,8 @@ class PlayerController {
     this.waiting = true
     this.playing = false
     this.pause = true
-    if (this.config.onWaiting) {
-      this.config.onWaiting(event, this)
+    if (this.config.onwaiting) {
+      this.config.onwaiting(event, this)
     }
   }
   //获取总长度

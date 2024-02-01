@@ -1,5 +1,5 @@
 <template>
-  <div id="player-default"></div>
+  <div id="player-event"></div>
 </template>
 
 <script>
@@ -13,8 +13,12 @@ export default {
   },
   created() {
     this.controller = new PlayerController({
-      id: "player-default",
+      id: "player-event",
       src: this.url,
+      autoplay: true,
+      onplay(event, controller) {
+        console.log("开始播放了")
+      },
     })
   },
   methods: {},
