@@ -56,8 +56,8 @@ module.exports = {
             path: "/zh/api/ui/form",
           },
           {
-            title: "表格 Table",
-            path: "/zh/api/ui/table",
+            title: "播放器 Player",
+            path: "/zh/api/ui/player",
           },
         ],
       },

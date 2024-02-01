@@ -38,7 +38,7 @@ export default {
   },
   methods: {
     initVideo() {
-      this.controller = new PlayerController(this.video, this.src)
+      this.controller = new PlayerController(this.video, this.src, this.id)
       this.$emit("created", this.controller)
     },
     //随机生成id，避免因为一个页面多个播放窗口
