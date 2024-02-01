@@ -2,7 +2,7 @@
   "name": "medium-ui",
   "version": "0.1.2",
   "private": false,
-  "main": "/dist/medium-ui.umd.min.js",
+  "main": "/medium-ui.umd.min.js",
   "description": "基于vue前端组件库",
   "author": {
     "name": "wilson"
@@ -14,7 +14,9 @@
     "dist": "vue-cli-service build --target lib packages/index.js"
   },
   "files": [
-    "dist/*",
+    "dist/*.js",
+    "dist/*.map",
+    "dist/*.css",
     "utils"
   ],
   "dependencies": {
