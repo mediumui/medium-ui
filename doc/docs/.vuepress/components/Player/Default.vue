@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import PlayerController from "medium-ui/utils/playerController"
+import PlayerController from "../../../../../utils/playerController.js"
 export default {
   data() {
     return {
