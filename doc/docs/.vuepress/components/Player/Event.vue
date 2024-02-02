@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import PlayerController from "../../../../../utils/playerController"
+import PlayerController from "medium-ui/utils/playerController"
 export default {
   data() {
     return {
@@ -11,7 +11,7 @@ export default {
       url: "https://media.w3.org/2010/05/sintel/trailer.mp4",
     }
   },
-  created() {
+  mounted() {
     this.controller = new PlayerController({
       id: "player-event",
       src: this.url,
