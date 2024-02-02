@@ -1,5 +1,7 @@
 <template>
-  <div id="player-default"></div>
+  <div>
+    <div id="player-default"></div>
+  </div>
 </template>
 
 <script>

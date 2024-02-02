@@ -100,15 +100,26 @@ export default {
 id| 元素id|string|-|-  
 cache| 是否支持缓存，如果为<code>true</code>会把播放进度缓存至本地，下次自动续播|boolean|true|false  
 
-**参数**
+**事件**
 ***
-名称|说明|
-:---|:---
-onwaiting| 视频加载中
-onloadedmetadata| 源数据被加载完成后触发
-onplay | 当播放器已就绪可以开始播放时触发
-onplaying|当播放器已开始播放时触发
-onpause| 当播放器暂停时触发
-onended|当视频播放完成后触发
-onfullScreenChange| 当播放器全屏状态发生变化时触发
-onprogress|当播放进度发生变化时触发
+名称|说明|参数  
+:---|:---|:---  
+onwaiting|视频加载中|(event, controller) =>{}
+onloadedmetadata| 源数据被加载完成后触发|(event, controller) =>{}
+onplay | 当播放器已就绪可以开始播放时触发|(event, controller) =>{}
+onplaying|当播放器已开始播放时触发|(event, controller) =>{}
+onpause| 当播放器暂停时触发|(event, controller) =>{}
+onended|当视频播放完成后触发|(event, controller) =>{}
+onfullScreenChange| 当播放器全屏状态发生变化时触发|(isFullScreen, controller) =>{}
+onprogress|当播放进度发生变化时触发|(progress, controller) =>{}   
+
+
+**方法**
+***
+方法名|说明|参数
+:---|:---|:---
+play|播放视频| -
+paused|暂停视频| -
+fullScreen|进入全屏状态| -
+exitFullScreen|退出全屏状态|-
+destroy| 释放控制器| -

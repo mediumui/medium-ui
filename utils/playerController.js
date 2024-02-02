@@ -21,7 +21,7 @@ class PlayerController {
     this.ended = false
 
     //视频进度
-    this.progress = 0
+    this.progress = -1
 
     //当前全屏状态
     this.isFullScreen = false
@@ -89,7 +89,12 @@ class PlayerController {
   }
 
   _setProgress() {
-    this.progress = this.video.currentTime
+    const progress = this.video.currentTime
+    // //当禁止快进时
+    // // 默认进度条大于3是快进
+    // if (this.config.fast == true && this Math.abs(progress - this.progress) > 3) {
+
+    // }
     if (this.config.cache == true) {
       const time = localStorage.getItem(this.config.src)
       // 保存间隔2s
@@ -99,6 +104,40 @@ class PlayerController {
     }
     if (this.config.onprogress) {
       this.config.onprogress(this.progress, this)
+    }
+  }
+  /**
+   * 进入全屏
+   */
+  fullScreen() {
+    if (this.isFullScreen) return
+    if (this.video.requestFullscreen) {
+      this.video.requestFullscreen()
+    } else if (this.video.mozRequestFullScreen) {
+      this.video.mozRequestFullScreen()
+    } else if (this.video.msRequestFullscreen) {
+      this.video.msRequestFullscreen()
+    } else if (this.video.oRequestFullscreen) {
+      this.video.oRequestFullscreen()
+    } else if (this.video.webkitRequestFullscreen) {
+      this.video.webkitRequestFullscreen()
+    }
+  }
+  /**
+   * 退出全屏
+   */
+  exitFullScreen() {
+    if (!this.isFullScreen) return
+    if (document.exitFullscreen) {
+      document.exitFullscreen()
+    } else if (document.msExitFullscreen) {
+      document.msExitFullscreen()
+    } else if (document.mozCancelFullScreen) {
+      document.mozCancelFullScreen()
+    } else if (document.oRequestFullscreen) {
+      document.oCancelFullScreen()
+    } else if (document.webkitExitFullscreen) {
+      document.webkitExitFullscreen()
     }
   }
   /**
@@ -182,7 +221,7 @@ class PlayerController {
     var isFullScreen = document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen || document.fullscreenElement
     this.isFullScreen = Boolean(isFullScreen)
     if (this.config.onfullScreenChange) {
-      this.config.onfullScreenChange(event, this)
+      this.config.onfullScreenChange(isFullScreen, this)
     }
   }
   /**
@@ -196,6 +235,7 @@ class PlayerController {
   }
   destroy() {
     this._clearInterval()
+    this.video = null
   }
 }
 export default PlayerController
