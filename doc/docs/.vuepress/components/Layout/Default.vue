@@ -34,8 +34,9 @@ export default {
 }
 </script>
 
-<style scope>
+<style scoped>
 .content {
   padding: 12px;
+  height: 1000px;
 }
 </style>

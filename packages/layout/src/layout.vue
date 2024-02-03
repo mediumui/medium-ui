@@ -72,6 +72,7 @@ export default {
   flex-direction: row;
   padding: 15px 0;
   justify-content: space-between;
+  border-bottom: #dcdfe6 1px solid;
 }
 .me-layout .me-layout-head .me-layout-head-left {
   display: flex;

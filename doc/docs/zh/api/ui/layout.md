@@ -94,7 +94,13 @@ export default {
     },
   },
 }
-```  
+``` 
+```css
+.content {
+  padding: 12px;
+  height: 1000px;
+}
+``` 
 :::  
 ::: tip
 需要展示页脚固定栏时，使用<code>slot="footer"</code>。当页脚为空时，内容区域会自动填充页脚空间
