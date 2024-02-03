@@ -59,6 +59,10 @@ module.exports = {
             title: "播放器 Player",
             path: "/zh/api/ui/player",
           },
+          {
+            title: "框架 Layout",
+            path: "/zh/api/ui/layout",
+          },
         ],
       },
     ],

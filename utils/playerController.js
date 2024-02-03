@@ -44,7 +44,7 @@ class PlayerController {
     for (let key in map) {
       const value = map[key]
       //忽略自有字段不设置
-      const ignoreKeys = ["id", "cache"]
+      const ignoreKeys = ["id", "cache", "menu"]
       if (typeof value != "function" && ignoreKeys.indexOf(key) == -1) {
         video.setAttribute(key, value)
       }
@@ -65,6 +65,13 @@ class PlayerController {
     }
 
     const _this = this
+    //是否展示右键菜单
+    video.oncontextmenu = function (e) {
+      // 有可能不配置，null也认为展示菜单
+      if (_this.config.menu == false) return false
+      return true
+    }
+
     video.onwaiting = (event) => {
       _this._waiting(event)
     }

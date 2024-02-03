@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import DePlayer from "./components/player.vue"
+import DePlayer from "./components/layout.vue"
 export default {
   components: { DePlayer },
   data() {

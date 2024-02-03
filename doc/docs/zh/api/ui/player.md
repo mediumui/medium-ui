@@ -97,8 +97,10 @@ export default {
 ***
 参数|说明|类型|可选值|默认值
 :---|:---|:---|:---|:---  
-id| 元素id|string|-|-  
-cache| 是否支持缓存，如果为<code>true</code>会把播放进度缓存至本地，下次自动续播|boolean|true|false  
+id| 元素id|String|-|-  
+cache| 是否支持缓存，如果为<code>true</code>会把播放进度缓存至本地，下次自动续播|Boolean|true|false
+menu|是否展示播放器右键菜单|Boolean|false|true
+-|<code>video</code>标签默认属性参数|Any|-|-
 
 **事件**
 ***
