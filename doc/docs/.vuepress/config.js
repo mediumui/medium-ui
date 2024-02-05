@@ -63,6 +63,10 @@ module.exports = {
             title: "框架 Layout",
             path: "/zh/api/ui/layout",
           },
+          {
+            title: "图片标注 ImageMark",
+            path: "/zh/api/ui/imageMark",
+          },
         ],
       },
     ],

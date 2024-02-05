@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import DePlayer from "./components/layout.vue"
+import DePlayer from "./components/imgPoint/imgPoint.vue"
 export default {
   components: { DePlayer },
   data() {
