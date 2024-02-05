@@ -1,13 +1,13 @@
 <template>
   <div id="app">
-    <de-player></de-player>
+    <me-table></me-table>
   </div>
 </template>
 
 <script>
-import DePlayer from "./components/imgPoint/imgPoint.vue"
+import MeTable from "./components/table.vue"
 export default {
-  components: { DePlayer },
+  components: { MeTable },
   data() {
     return {}
   },
