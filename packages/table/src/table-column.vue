@@ -41,11 +41,11 @@ export default {
       default: () => {},
     },
     //(select、级联)可选项数据源，键名可通过 Props 属性配置
-    seOptions: {
+    seProps: {
       type: Object,
       default: () => {
         return {
-          label: "id",
+          label: "label",
           value: "id",
           children: "children",
         }
@@ -55,6 +55,13 @@ export default {
     seMaxlength: Number,
     //提示语
     sePlaceholder: String,
+    //type为'daterange'、'monthrange'、'datetimerange'时有效
+    sePickerOptions: {
+      type: Object,
+      default: () => {},
+    },
+    //type为'daterange'、'monthrange'、'datetimerange'时有效,用于输出格式
+    seValueFormat: String,
   },
 }
 </script>

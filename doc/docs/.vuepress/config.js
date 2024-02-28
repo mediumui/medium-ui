@@ -67,6 +67,14 @@ module.exports = {
             title: "图片标注 ImageMark",
             path: "/zh/api/ui/imageMark",
           },
+          {
+            title: "搜索 Search",
+            path: "/zh/api/ui/search",
+          },
+          {
+            title: "表格 Table",
+            path: "/zh/api/ui/table",
+          },
         ],
       },
     ],

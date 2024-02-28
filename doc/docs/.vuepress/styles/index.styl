@@ -4,3 +4,19 @@
 .me-form  table {
     display: table;
 }
+.me-table .el-table table {
+    border-collapse: unset;
+    margin: unset;
+    display: inherit;
+    overflow-x: unset;
+}
+.me-table .el-table tr {
+     border-top: unset;
+    &:nth-child(2n) {
+         background-color: unset;
+    }
+     
+}
+.me-table .el-table th, .me-table .el-table td {
+     border: unset;
+}

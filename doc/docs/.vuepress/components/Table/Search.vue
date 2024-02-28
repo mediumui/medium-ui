@@ -9,21 +9,29 @@
         label="序号"
         width="80"
         align="center"
-      ></me-table-column>
+      >
+      </me-table-column>
       <me-table-column
         label="姓名"
         prop="name"
         width="200px"
         show-overflow-tooltip
-      ></me-table-column>
+        search
+        seNimble
+      >
+      </me-table-column>
       <me-table-column
         label="年龄"
         prop="age"
-      ></me-table-column>
+        search
+        seNimble
+      >
+      </me-table-column>
       <me-table-column
         label="班级"
         prop="class"
-      ></me-table-column>
+      >
+      </me-table-column>
     </me-table>
   </div>
 </template>

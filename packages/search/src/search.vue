@@ -3,6 +3,7 @@
     <el-input
       v-model="nimbleValue"
       placeholder="请输入快捷搜索内容"
+      clearable
     >
       <el-select
         v-model="nimbleKey"
@@ -19,7 +20,7 @@
     </el-input>
     <el-button
       type="primary"
-      @click="search"
+      @click="__search"
     >
       查询
     </el-button>
@@ -32,8 +33,9 @@
       <el-button
         slot="reference"
         @click="visible = !visible"
-        >高级查询</el-button
       >
+        高级查询
+      </el-button>
       <div class="me-search-popover-content">
         <div class="me-search-popover-title">高级查询</div>
         <el-form label-width="120px">
@@ -41,6 +43,20 @@
             <slot />
           </el-row>
         </el-form>
+        <div class="me-search-popover-footer">
+          <el-button
+            type="primary"
+            size="mini"
+            @click="__search"
+          >
+            查询
+          </el-button>
+          <el-button
+            size="mini"
+            @click="__reset"
+            >重置</el-button
+          >
+        </div>
       </div>
     </el-popover>
   </div>
@@ -51,7 +67,12 @@ export default {
   provide() {
     return {
       span: this.span,
+      updateValue: this.__updateValue,
     }
+  },
+  name: "search",
+  props: {
+    value: Object,
   },
   data() {
     return {
@@ -67,6 +88,29 @@ export default {
       formNumber: 0,
     }
   },
+  watch: {
+    nimbleValue: {
+      immediate: true,
+      handler() {
+        const params = JSON.parse(JSON.stringify(this.value))
+        if (this.nimbleKey) {
+          params[this.nimbleKey] = this.nimbleValue
+          this.$emit("input", params)
+        }
+      },
+    },
+    nimbleKey: {
+      immediate: true,
+      handler(newVal, oldVal) {
+        const params = JSON.parse(JSON.stringify(this.value))
+        if (oldVal && oldVal.length) {
+          delete params[oldVal]
+        }
+        params[newVal] = this.nimbleValue
+        this.$emit("input", params)
+      },
+    },
+  },
   computed: {
     span() {
       if (this.formNumber == 1) return 24
@@ -75,17 +119,41 @@ export default {
   },
   mounted() {
     this.$nextTick(() => {
-      this.initNimble()
+      this.__initNimble()
     })
   },
   methods: {
-    search() {
+    __updateValue(key, value) {
+      setTimeout(() => {
+        const params = JSON.parse(JSON.stringify(this.value))
+        if (!value || !value.length) {
+          delete params[key]
+        } else {
+          params[key] = value
+        }
+        this.$emit("input", params)
+      }, 300)
+    },
+    __search() {
+      this.visible = false
       this.$emit("search")
+    },
+    __reset() {
+      const params = {}
+      params[this.nimbleKey] = this.nimbleValue
+
+      this.$slots.default.forEach((node) => {
+        node.componentInstance.reset()
+      })
+      setTimeout(() => {
+        this.$emit("input", params)
+        this.__search()
+      }, 300)
     },
     /**
      * 初始化快捷搜索
      */
-    initNimble() {
+    __initNimble() {
       const nimbleSelectList = [
         {
           label: "全部",
@@ -95,7 +163,7 @@ export default {
       const nodes = this.$slots.default
       for (let i = 0; i < nodes.length; i++) {
         const node = nodes[i]
-        if (node.tag.indexOf("search-item") == -1) continue
+        if (!node.tag || node.tag.indexOf("search-item") == -1) continue
         this.formNumber += 1
         const component = node.componentInstance
         if (component.nimble != true) continue
@@ -139,6 +207,7 @@ export default {
 .me-search-popover-content {
   display: flex;
   flex-direction: column;
+  min-width: 400px;
 }
 .me-search-popover-title {
   padding: 20px 20px 30px 20px;
@@ -146,5 +215,14 @@ export default {
   font-weight: 500;
   color: #1768b4;
   line-height: 24px;
+}
+.me-search-popover-footer {
+  padding: 15px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.me-search-popover-footer > .el-button + .el-button {
+  margin-left: 10px;
 }
 </style>

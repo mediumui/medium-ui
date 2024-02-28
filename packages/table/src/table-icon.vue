@@ -5,8 +5,8 @@
       @click="onClick"
       size="small"
       circle
+      :icon="icon"
     >
-      <i :class="icon" />
     </el-button>
   </el-tooltip>
 </template>
