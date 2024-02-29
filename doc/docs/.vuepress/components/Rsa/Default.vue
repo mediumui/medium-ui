@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import Rsa from "../../../../../utils/rsa"
+import Rsa from "../../../../../utils/rsa.js"
 export default {
   data() {
     return {

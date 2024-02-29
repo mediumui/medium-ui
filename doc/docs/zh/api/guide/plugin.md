@@ -130,11 +130,14 @@ export default {
 }
 ```
 :::  
-## **数据加密** 
+
+## **数据加密**  
 <Rsa-Default/>  
+
 :::tip
 加密方式使用的是<code>RSA</code>，插件对工具实现全局单例方式。在加密前需要进行初始化<code>RSA.init</code>,因为使用单例，所以全局只需调用一次即可。
-:::
+:::  
+
 ::: details 查看代码
 ```html
 <template>

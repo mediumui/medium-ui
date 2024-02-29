@@ -1,4 +1,4 @@
-import JSEncrypt from "../packages/plugin/rsa"
+import JSEncrypt from "./encryption.js"
 let instance
 class Rsa {}
 Rsa.getInstance = function () {
