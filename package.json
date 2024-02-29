@@ -1,6 +1,6 @@
 {
   "name": "medium-ui",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "private": false,
   "main": "/dist/medium-ui.umd.min.js",
   "description": "基于vue前端组件库",
