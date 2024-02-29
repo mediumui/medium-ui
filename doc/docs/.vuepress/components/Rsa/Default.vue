@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import Rsa from "medium-ui/utils/rsa"
+import Rsa from "../../../../../utils/rsa"
 export default {
   data() {
     return {
