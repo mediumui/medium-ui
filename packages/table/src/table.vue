@@ -74,7 +74,7 @@
           :current-page.sync="pageNum"
           :page-size="pageSize"
           :page-sizes="pageSizes"
-          layout="total, sizes, prev, pager, next"
+          layout="total, sizes, prev, pager, next,jumper"
           :total="total"
         >
         </el-pagination>

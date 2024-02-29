@@ -91,7 +91,7 @@ export default {
   },
 }
 </script>
-<style scoped>
+<style>
 .zy-verify-number {
   display: flex;
   align-items: center;

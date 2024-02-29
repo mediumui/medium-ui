@@ -139,7 +139,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .me-image-mark {
   display: flex;
   flex-direction: column;
